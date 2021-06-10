@@ -1,0 +1,13 @@
+{
+  "appId": "com.bigchopper.ionicgraphql",
+  "appName": "Book Using GraphQL",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

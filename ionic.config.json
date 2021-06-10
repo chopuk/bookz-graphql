@@ -1,0 +1,7 @@
+{
+  "name": "ionic-graphql",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
