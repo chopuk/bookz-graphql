@@ -31,7 +31,11 @@ const book = function(){
         addedby: {
             type: Schema.Types.ObjectId,
             ref: 'User' 
-        }
+        },
+        bookId: {
+            type:String,	
+            required: true
+        },
 	},
 	{
     	versionKey: false

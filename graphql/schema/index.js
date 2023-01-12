@@ -10,6 +10,7 @@ type Book {
     price: Float!
     quantity: Int!
     addedby: User!
+    bookId: String!
 }
 input BookInput {
     title: String!
@@ -19,6 +20,7 @@ input BookInput {
     price: Float!
     quantity: Int!
     userId: String!
+    bookId: String!
 }
 input BookUpdate {
     id: String!
@@ -28,6 +30,7 @@ input BookUpdate {
     publisher: String!
     price: Float!
     quantity: Int!
+    bookId: String!
 }
 type BookDetails {
     _id: String!

@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const graphqlSchema = require('./graphql/schema/index');
 const graphqlResolvers = require('./graphql/resolvers/index');
 const isAuthorized = require('./middleware/auth');
+const path = require('path');
 
 const dotenv = require('dotenv');
 
@@ -12,6 +13,8 @@ const expressWinston = require('express-winston');
 const winston = require('winston');
 
 const app = express();
+
+app.use(express.static(path.join(__dirname, 'public'))) 
 
 app.use(express.json());
 
@@ -55,24 +58,7 @@ dotenv.config();
 const port = process.env.PORT || 3000;
 
 //
-// Old connection string for mLab
-//
-// mongoose.connect(
-//     "mongodb://" + 
-//     process.env.MONGO_USER + ":" + 
-//     process.env.MONGO_PASSWORD + 
-//     "@ds057538.mlab.com:57538/bookz-graphql",
-//     {useNewUrlParser: true}
-//     ).then(() => {
-//         app.listen(port);
-//         console.log(`app listening on port ${port}`)
-//     })
-//     .catch(err => {
-//         console.log(err);
-//     });  
-
-//
-// New connection string for mongodb.com
+// New Connection string for mongodb.com
 //
 mongoose.connect(
     "mongodb+srv://" + 

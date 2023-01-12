@@ -39,7 +39,8 @@ module.exports = {
                 publisher: args.bookInput.publisher,
                 price: +args.bookInput.price,
                 quantity: +args.bookInput.quantity,
-                addedby: args.bookInput.userId
+                addedby: args.bookInput.userId,
+                bookId: args.bookInput.bookId
             })
             let createdBook;
             const result = await book.save();
@@ -63,7 +64,8 @@ module.exports = {
                 author: args.bookUpdate.author,
                 publisher: args.bookUpdate.publisher,
                 price: +args.bookUpdate.price,
-                quantity: +args.bookUpdate.quantity
+                quantity: +args.bookUpdate.quantity,
+                bookId: args.bookUpdate.bookId
             })
             
             const result = await Book.updateOne( { _id: args.bookUpdate.id},
@@ -74,7 +76,8 @@ module.exports = {
                          description: args.bookUpdate.description,
                          publisher: args.bookUpdate.publisher,
                          price: args.bookUpdate.price,
-                         quantity: args.bookUpdate.quantity
+                         quantity: args.bookUpdate.quantity,
+                         bookId: args.bookUpdate.bookId
                         }
                 });
             return {_id: args.bookUpdate.id, title: args.bookUpdate.title};
